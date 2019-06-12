@@ -74,7 +74,7 @@ func list(visit func(string, *Node), filters ...string) error {
 	args := []string{
 		"ps",
 		"-q",         // quiet output for parsing
-		"-a",         // show stopped nodes
+		// "-a",         // show stopped nodes
 		"--no-trunc", // don't truncate
 		// filter for nodes with the cluster label
 		"--filter", "label=" + constants.ClusterLabelKey,
