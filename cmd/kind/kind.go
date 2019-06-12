@@ -63,6 +63,13 @@ func NewCommand() *cobra.Command {
 		defaultLevel.String(),
 		"logrus log level "+logutil.LevelsString(),
 	)
+	cmd.PersistentFlags().StringVar(
+		&flags.LogLevel,
+		"log-level",
+		defaultLevel.String(),
+		"alternative hidden syntax for loglevel",
+	)
+    cmd.PersistentFlags().MarkHidden("log-level")
 	// add all top level subcommands
 	cmd.AddCommand(build.NewCommand())
 	cmd.AddCommand(completion.NewCommand())
